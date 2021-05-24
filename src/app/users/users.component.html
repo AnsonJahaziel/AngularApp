@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+    <div class="card">
+        <div class="card-header">
+            User Form
+        </div>
+        <div class="card-body">
+
+            <form [formGroup]="userForm">
+
+                <label>Username</label>
+                <input id="fullname" formControlName="fullname" type="text" class="form-control" placeholder="Add Fullname">
+                <div *ngIf="getControl.fullname.invalid && (getControl.fullname.dirty || getControl.fullname.touched)" class="alert alert-danger">
+                    <div *If="getControl.fullname.errors?.required">
+                        Name Cannot Be Empty
+                    </div>
+                    <div *ngIf="getControl.fullname.errors?.minlength">
+                        Not Enough Characters
+                    </div>
+                    <div *ngIf="getControl.fullname.errors?.maxlength">
+                        The Username Exceeds Maximun Number of Characters
+                    </div>
+
+                </div>
+
+                <label>Email</label>
+                <input id="email" formControlName="email" type="email" class="form-control" placeholder="Add Email">
+                <div *ngIf="getControl.email.invalid && (getControl.email.dirty || getControl.email.touched)" class="alert alert-danger">
+                    <div *If="getControl.email.errors?.required">
+                        Email Cannot Be Empty
+                    </div>
+                    <div *ngIf="getControl.email.errors?.minlength">
+                        Not Enough Characters
+                    </div>
+
+                </div>
+
+                <label>School</label>
+                <input id="school" formControlName="school" type="text" class="form-control" placeholder="Add School">
+                <div *ngIf="getControl.school.invalid && (getControl.school.dirty || getControl.school.touched)" class="alert alert-danger">
+                    <div *If="getControl.school.errors?.required">
+                        Email Cannot Be Empty
+                    </div>
+
+                </div>
+
+                <label>Telephone</label>
+                <input id="telephone" formControlName="telephone" type="number" class="form-control" placeholder="Add Telephone">
+
+            </form>
+
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</div>
+  
